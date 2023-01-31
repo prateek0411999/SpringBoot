@@ -1,0 +1,7 @@
+package com.springboot.demo.sub1;
+
+public class SpringComponent {
+	public String getMessage() {
+		return "adfadf";
+	}
+}
