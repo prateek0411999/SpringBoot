@@ -1,0 +1,20 @@
+package com.springboot.first.app;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+@ResponseBody
+public class HelloWorldController {
+		//get 
+		//post
+		//put 
+		//delete
+	
+	//@Controller -> to make this class handle particular routes
+	//@ResponseBody -> convert the java object to xml, json
+	
+	// we can define these 2 annotations is 1 
+	// by using @RestController Annotation -> @Controller + @ResponseBody
+		
+}
