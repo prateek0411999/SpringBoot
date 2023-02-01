@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -49,9 +51,9 @@ public class StudentController {
 			return "find the student with " + ID+ "  and return his/her record";
 		}
 		
-		
-		// http://localhost:8080/student/prateek/sharma'
 		// handle the path variable 
+	
+		// http://localhost:8080/student/prateek/sharma	
 		// in order to bind first_name, last_name with firstName, lastName
 		// we need to use @PathVariable annotation (binds incoming path variable to method arguments)
 		
@@ -59,7 +61,23 @@ public class StudentController {
 		public Student studentPathVariable(@PathVariable("first_name") String firstName, @PathVariable("last_name") String lastName) {
 			return new Student(firstName, lastName);
 		}
+		
+		
 	
+		
+	//handle the Request Params or Query Params
+		// @RequestParam
+	//http://localhost:8080/student?firstName='Ramesh'
+		@GetMapping("/get/student")
+		public Student getParticularStudent(@RequestParam(name = "firstName") String first_name) {
+			// we can get the query param
+			// and search that record in the database
+			// can then return the record
+			// for now we'll return the new record
+			System.out.println("REQUEST PARAM FIRST NAME -----" + first_name );
+			return new Student("adfadf", "adfasdf");
+		}
+		
 	
 	
 	

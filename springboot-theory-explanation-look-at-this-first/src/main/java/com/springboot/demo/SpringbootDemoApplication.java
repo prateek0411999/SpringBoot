@@ -58,7 +58,31 @@ public class SpringbootDemoApplication {
 							// java version -> default is 1.8
 							// will provide maven plugins as well
 							// dependency versions
-	// 3.
+	// 3. EMBEDDED SERVER
+		// we don't need to download webserver to run our appliacation
+		// spring boot provides us with 3 web servers
+		// 1. TOMCAT -- by default
+		// 2. JETTY 
+		// 3. UNDERTOW
+		// we also don't need to run web server explicitly in the production
+		// as the .war file (the whole project) will automatically contain the same
+		// so this download, setting up webserver and Deployin in that web server STEP GETS ELIMINATED WIHT THE HELP OF SPRING BOOT
+		// we just need to package the app with .jar or .war file
+		// and that's it
+		// and this also means
+		// we can directly run our app with single command from CMD as everthing is packed into app thanks to spring boot
+		// so we got 2 ways to do that
+				// 1. using java -jar command
+					// go to project directory
+					// first package the app to a jar file  (java must be installed on system)
+						// using mvnw package (mvnw is maven wrapper)
+					// navigate to target folder
+					// java -jar jarfilename.jar
+				// 2. using spring boot maven plugin
+					// go to project directory
+					// and simple run
+					// mvn spring-boot:run
+		
 		
 	
 	
