@@ -48,7 +48,7 @@ public class StudentController {
 		@GetMapping("/student/{id}")
 		public String studentPathIDVariable(@PathVariable("id") String ID) {
 			// we can get the ID here and perform the action
-			return "find the student with " + ID+ "  and return his/her record";
+			return "find the student with   " + ID+ "  and return his/her record";
 		}
 		
 		// handle the path variable 
@@ -74,7 +74,7 @@ public class StudentController {
 			// and search that record in the database
 			// can then return the record
 			// for now we'll return the new record
-			System.out.println("REQUEST PARAM FIRST NAME -----" + first_name );
+			System.out.println("REQUEST  PARAM FIRST NAME -----" + first_name );
 			return new Student("adfadf", "adfasdf");
 		}
 		
