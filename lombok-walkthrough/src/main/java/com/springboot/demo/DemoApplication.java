@@ -10,7 +10,7 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 		
 		Student student = new Student();
-	
+		
 	}
 
 }

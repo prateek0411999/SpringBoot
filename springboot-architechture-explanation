@@ -1,0 +1,31 @@
+
+						// Spring Boot Architecture
+		//Spring Boot Architecture has four layers:
+		
+		//Presentation Layer – Authentication & Json Translation (CONTROLLER)
+				//		✔️ Performing authentication. 
+				//		✔️ Converting JSON data into an object (and vice versa).
+				//		✔️ Handling HTTP requests.
+				//		✔️ Transfering authentication to the business layer.
+		//Business Layer – Business Logic, Validation & Authorization (SERVICE)
+				//		The Business layer communicates with both the Presentation layer and the Persistence Layer.
+				//		✔️ Performing validation.
+				//		✔️ Performing authorization.
+				//		✔️ Handling the business logic and rules.
+		//Persistence Layer – Storage Logic
+				//		This layer is responsible for:
+				//
+				//			✔️ Containing storage logic.
+				//
+				//			✔️ Fetching objects and translating them into database rows (and vice versa).
+		//Database Layer – Actual Database   
+
+		// controller is responsible for handling the client request first
+		// controller then call the appropiate service
+		// service then class the repository
+
+		//Annotation
+				//@Controller : Annotated class indicates that it is a controller component, and mainly used at the presentation layer. 
+				//@Service : It indicates annotated class is a Service component in the business layer. 
+				// @Repository : You need to use this annotation within the persistence layer, this acts like database repository.
+
