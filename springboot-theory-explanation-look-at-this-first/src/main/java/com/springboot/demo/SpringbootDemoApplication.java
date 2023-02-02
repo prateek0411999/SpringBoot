@@ -82,7 +82,8 @@ public class SpringbootDemoApplication {
 					// go to project directory
 					// and simple run
 					// mvn spring-boot:run
-		
+//		4. Spring Boot CLI
+//		5.  Spring Boot Actuator
 		
 	
 	

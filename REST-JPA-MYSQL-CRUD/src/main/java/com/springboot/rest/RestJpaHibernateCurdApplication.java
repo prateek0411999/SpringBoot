@@ -22,9 +22,10 @@ public class RestJpaHibernateCurdApplication {
 		
 		
 						// Spring Boot Architecture
+		//Spring Boot follows a layered architecture in which each layer communicates with the layer directly below or above (hierarchical structure) it.
 		//Spring Boot Architecture has four layers:
 		
-		//Presentation Layer – Authentication & Json Translation (CONTROLLER)
+		//Presentation Layer – Authentication & Json Translation (CONTROLLER) (@RestController)
 				//		✔️ Performing authentication. 
 				//		✔️ Converting JSON data into an object (and vice versa).
 				//		✔️ Handling HTTP requests.

@@ -18,6 +18,9 @@ import com.springboot.rest.model.Employee;
 // delete, deleteAll, deleteById,
 // exitsById and many more
 
+
+// this interface variable we'll be using in Service implementation as jpaRepository object
+// to perform the database functions that jpa provides
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
 }
