@@ -1,5 +1,7 @@
 package com.springboot.associations.onetomany.service;
 
-public interface PostService {
+import com.springboot.associations.onetomany.model.Post;
 
+public interface PostService {
+		public Post createPost(Post post);
 }

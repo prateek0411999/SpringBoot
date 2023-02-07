@@ -1,11 +1,14 @@
 package com.springboot.associations.onetomany.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -16,7 +19,7 @@ import lombok.Data;
 @Table(name = "posts")
 public class Post {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
 	
 	@Column(name = "title", nullable = false)
@@ -35,7 +38,7 @@ public class Post {
 	// so for that we need to use @ManytoOne annotation there
 	// and here we need to use mapped_by(and specify the variable defined in comment i.e. post)  so that spring wont create any foriegn key here or new table for us
 	
-	@OneToMany(mappedBy = "post")
-	private List<Comment> comments;
+	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+	private List<Comment> comments = new ArrayList<>();
 	
 }
