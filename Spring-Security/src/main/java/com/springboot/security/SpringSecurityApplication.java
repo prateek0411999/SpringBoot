@@ -62,7 +62,7 @@ public class SpringSecurityApplication {
 						// it will call the authenticate method passing in the Authentication Object recieved from filter
 							// authenticate(Authentication  auth)
 						// now this AuthenticationManager is an interface it just contains this authenticate action
-						// now to call this authenticate method we've number of Authentication Providers (session based, token based, OAuth2 based)   (Authentication providers are simply classes that are implementing different types of authentication and we can use that as per our need)
+						// now to call this authenticate method we've number of Authentication Providers (session based, token based, OAuth 1.0, OAuth 2.0, Digest Auth, Hawk authentication ......)   (Authentication providers are simply classes that are implementing different types of authentication and we can use that as per our need)
 						// but now the thing is AuthenticationManager doesn't know which AuthenticationProvider to use  right!!!!!!!!!!! (like which one we want)
 						// so now AuthenticationManager will call a ProviderManager
 						// ProviderManager has the power to check for suitable AuthenticationManager for us
