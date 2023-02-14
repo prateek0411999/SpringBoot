@@ -1,8 +1,0 @@
-package com.springboot.first.app;
-
-import org.springframework.stereotype.Controller;
-
-@Controller
-public class HelloWorldController {
-
-}

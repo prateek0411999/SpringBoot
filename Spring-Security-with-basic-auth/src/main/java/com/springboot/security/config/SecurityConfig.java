@@ -23,6 +23,10 @@ public class SecurityConfig {
 	
 	// we can configure the user data required for basic authentication
 	// using the userDetailsService 
+	// oR WE CAN DO THIS IN application.properties files as well
+		// using 
+		// spring.security.user.name = 
+		// spring.security.user.password = 
 	// and usin the appropiate methods
 			// withUsername, password, roles, build (to build the object)
 			// we can also use passwordEncoder to encode the password first and then save it in securityContext
