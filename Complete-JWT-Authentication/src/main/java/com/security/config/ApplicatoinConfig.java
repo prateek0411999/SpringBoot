@@ -14,7 +14,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.security.repository.UserRepository;
 
+import lombok.RequiredArgsConstructor;
+
 @Configuration
+@RequiredArgsConstructor
 public class ApplicatoinConfig {
 	
 	private  UserRepository repository;
@@ -45,6 +48,14 @@ public class ApplicatoinConfig {
 		// which password encoder to user
 		authProvider.setPasswordEncoder(passwordEncoder());
 		return authProvider;
+		
+//		Spring Security provides a number of AuthenticationProvider implementations,
+//
+//		Dao AuthenticationProvider
+//		Cas AuthenticationProvider
+//		X509  AuthenticationProvider
+//		Jaas AuthenticationProvider
+//		Ldap AuthenticationProvider
 	}
 
 	@Bean

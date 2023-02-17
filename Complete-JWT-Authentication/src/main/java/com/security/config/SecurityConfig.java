@@ -10,6 +10,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import lombok.RequiredArgsConstructor;
 
+// sabse phele every request will go to the filter chain
+// and we'll update that filter chain to make use of our 
+// custom jwt authentication filter
+
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
