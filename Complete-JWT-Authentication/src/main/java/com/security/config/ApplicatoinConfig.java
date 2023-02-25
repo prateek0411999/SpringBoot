@@ -1,11 +1,13 @@
 package com.security.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -16,10 +18,12 @@ import com.security.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
+
 @Configuration
 @RequiredArgsConstructor
 public class ApplicatoinConfig {
 	
+	@Autowired
 	private  UserRepository repository;
 
 	@Bean
@@ -41,7 +45,9 @@ public class ApplicatoinConfig {
 		// we have many authentication providers
 		// we need to specify 2 properties
 				//1. userDetailsService
-				//2. which password Encoder to use
+				//2. which password Encoder to use we'll use the brcypt one
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!");
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!");
 		DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
 		authProvider.setUserDetailsService(userDetailsService());
 		

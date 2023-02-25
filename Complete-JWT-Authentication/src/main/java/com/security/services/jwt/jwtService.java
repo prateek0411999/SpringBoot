@@ -1,5 +1,6 @@
 package com.security.services.jwt;
 
+import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,9 +28,10 @@ import io.jsonwebtoken.security.Keys;
 @Service
 public class jwtService {
 	
-	@Value("jwt.secret")
-	private static String SECRET_KEY; 
-
+	@Value("${jwt.secret}")
+	private String SECRET_KEY; 
+	
+	
 
 	private Claims extractAllClaims(String token) {
 		// claims are nothing but the payload part in the token
@@ -46,10 +48,13 @@ public class jwtService {
 	// creating a generic method to extract a single claim 
 	public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
 		final Claims claims = extractAllClaims(token);
+		
+		System.out.println("JWT CLAIMS" + claims);
 		return claimsResolver.apply(claims);
 	}
 
-	private SecretKey getSecretKey() {
+	private Key getSecretKey() {
+		System.out.print("@!@@@@@@@@@@@@@@@@@@@@@@@@@@@@" + SECRET_KEY);
 		// TODO Auto-generated method stub
 		byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
 		return Keys.hmacShaKeyFor(keyBytes);
