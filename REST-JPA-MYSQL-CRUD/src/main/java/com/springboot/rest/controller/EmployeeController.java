@@ -26,7 +26,6 @@ public class EmployeeController {
 	// to complete the incoming http request
 	// so lets define the service object for employee
 	
-	
 	// @PathVariable to map the path variable with parameter variable
 	// @RequestParam to map the url parameters with function params
 	// @RequestBody to get the body json and covert it to object of param class
