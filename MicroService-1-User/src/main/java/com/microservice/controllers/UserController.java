@@ -40,13 +40,27 @@ public class UserController {
 		//we'll call the api of different project using RestTemplate provided by spring 
 		// http://localhost:8083/api/v1/contact/user/1311
 		
-		List contacts =  this.restTemplate.getForObject("http://localhost:8083/api/v1/contact/user/" + user.getId(), List.class);
-	
-		user.setContacts(contacts);
+//		List contacts =  this.restTemplate.getForObject("http://localhost:8083/api/v1/contact/user/" + user.getId(), List.class);
+//	
+//		user.setContacts(contacts);
 		
 		// now there's one more problem the user here we've provided to rest client is hard coded
 		// this issue can be solved using Eureka (which is also a microservice that we use as service registry)
+		
+//		return user;
+		
+		
+		
+		// now that we've registered both the services in eureka 
+		// we can use  service name directly instead of specifying localhost and port
+		// and for this to work we also need to add 
+		// @LoadBalanced annotation on RestTempllate
+		
+		List contacts =  this.restTemplate.getForObject("http://contact-service/api/v1/contact/user/" + user.getId(), List.class);
+	
+		user.setContacts(contacts);
 		return user;
+		
 	}
 	
 }
