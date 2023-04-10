@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: Centralized-Logging-ELK
+  output:
+    ansi:
+      enabled: always
+
+server:
+  port: 8001
+
+
+
+logging:
+ file: E:\projects\spring workspace\centralized-logging\logs\elk-stack.log

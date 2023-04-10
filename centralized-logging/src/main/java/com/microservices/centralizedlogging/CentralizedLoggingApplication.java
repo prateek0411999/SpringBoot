@@ -30,6 +30,18 @@ public class CentralizedLoggingApplication {
 
 
 	// NOTE
+	 // BY default basic authentication is enabled for Elastic Search
+		// so if we try to hit the request on 9200 default port
+		// i.e. http://localhost:9200
+			// we'll not get any response
+		// we may need to first setup username and password and have to use https instead of http
+
+		// but for now
+		// we can disable the authentication by opening elasticsearch.yml file
+		// and adding ---  false ---  on 92th line
+		   // xpack.security.enabled: false
+
+
 	// we need to tell kibana -> from where to fetch the logs
 			// as we're using the elastic search to store those logs
 		// so kibana should be knowing where the elastic server is running and on which port
